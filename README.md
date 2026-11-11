@@ -391,7 +391,8 @@ This section showcases the application's frontend interface and backend API test
 
 ### 15.2 Admin Dashboard
 
-![Admin Dashboard](docs/screenshots/admin-dashboard.png)
+![Admin Dashboard](docs/screenshots/admin-dashboard_1.png)
+![Admin Dashboard](docs/screenshots/admin-dashboard_2.png)
 
 ### 15.3 Department Management
 
@@ -419,7 +420,7 @@ This section showcases the application's frontend interface and backend API test
 
 ### 15.9 Attendance Management
 
-![Attendance Management](docs/screenshots/attendance-management.png)
+![Attendance Management](docs/screenshots/attendence-management.png)
 
 
 
