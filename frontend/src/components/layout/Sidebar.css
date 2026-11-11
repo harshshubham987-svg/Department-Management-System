@@ -1,0 +1,78 @@
+.purple-sidebar {
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    background: linear-gradient(180deg, #3b1464 0%, #29104a 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-brand h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.purple-role-badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #e9d5ff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.purple-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 30px;
+    flex: 1;
+}
+
+.purple-menu-item {
+    color: #d8b4fe;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.purple-menu-item:hover, .purple-menu-item.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.purple-logout-btn {
+    width: 100%;
+    padding: 11px;
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.purple-logout-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+}

@@ -1,0 +1,230 @@
+.purple-loading, .purple-error {
+    text-align: center;
+    padding: 40px;
+    font-weight: 600;
+}
+
+.purple-error-alert {
+    color: #ef4444;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.purple-success-alert {
+    color: #15803d;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.purple-dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.purple-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.purple-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.accent-card {
+    background: linear-gradient(135deg, #581c87 0%, #7e22ce 100%);
+    color: #ffffff;
+    border: none;
+}
+
+.accent-card .card-title {
+    color: #e9d5ff;
+}
+
+.accent-card .card-value {
+    color: #ffffff;
+}
+
+.card-header-info {
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.5px;
+}
+
+/* Table Card */
+.purple-table-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.table-card-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.table-card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.purple-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.purple-table th {
+    background: #f9fafb;
+    color: #4b5563;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.purple-table td {
+    padding: 14px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+}
+
+.purple-table tr:hover {
+    background: #f9fafb;
+}
+
+.empty-table {
+    text-align: center;
+    color: #9ca3af;
+    padding: 30px !important;
+}
+
+.endpoint-col {
+    font-family: monospace;
+    color: #7e22ce;
+    font-weight: 600;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-badge.ok { background: #dcfce7; color: #15803d; }
+
+/* Inline Inputs & Buttons */
+.inline-input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-edit, .btn-save {
+    background-color: #7e22ce;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-edit:hover, .btn-save:hover {
+    background-color: #6b21a8;
+}
+
+.btn-cancel {
+    background-color: #e5e7eb;
+    color: #374151;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #d1d5db;
+}
+
+.teacher-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.tab-btn.active {
+    background-color: #7e22ce;
+    color: #ffffff;
+}

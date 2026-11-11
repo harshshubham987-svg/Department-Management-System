@@ -1,48 +1,82 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './routes/ProtectedRoute';
+
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import TeacherDashboard from './pages/teacher/TeacherDashboard';
+import StudentDashboard from './pages/student/StudentDashboard';
+import DepartmentManagement from './pages/admin/DepartmentManagement';
+import Courses from './pages/admin/Courses';
+import UserManagement from './pages/admin/UserManagement';
+import EnrollmentManagement from './pages/admin/EnrollmentManagement';
+
 
 function App() {
-  const [backendMessage, setBackendMessage] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    return (
+        <AuthProvider>
+            <Router>
+                <Routes>
+                    {/* Default Redirect */}
+                    <Route path="/" element={<Navigate to="/login" replace />} />
+                    
+                    {/* Public Auth Routes */}
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
 
-  useEffect(() => {
-    // Backend server (port 5000) par GET request bhejna
-    fetch('http://localhost:5000/')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setBackendMessage(data.message);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Error connecting to backend:', err);
-        setError('Failed to connect to backend server.');
-        setLoading(false);
-      });
-  }, []);
+                    {/* Role-Protected Dashboards */}
+                    <Route 
+                        path="/admin/dashboard" 
+                        element={
+                            <ProtectedRoute allowedRoles={['Admin']}>
+                                <AdminDashboard />
+                            </ProtectedRoute>
+                        } 
+                    />
+                    <Route 
+                        path="/admin/departments" 
+                        element={
+                            <ProtectedRoute allowedRoles={['Admin']}>
+                            <DepartmentManagement />
+                            </ProtectedRoute>
+                        } 
+                    />
+                    {/* // AppRoutes ya Routes ke andar yeh route add karein: */}
+                    <Route path="/admin/courses" element={<Courses />} />
 
-  return (
-    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Department Management System</h1>
-      <h2>Backend Connectivity Status</h2>
-      
-      {loading && <p>Connecting to backend...</p>}
-      
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      {backendMessage && (
-        <div style={{ marginTop: '20px', padding: '15px', background: '#e6ffed', display: 'inline-block', borderRadius: '5px', border: '1px solid #b7eb8f' }}>
-          <p style={{ color: '#52c41a', fontWeight: 'bold', fontSize: '18px' }}>
-            {backendMessage}
-          </p>
-        </div>
-      )}
-    </div>
-  );
+                    {/* // Route inside App.jsx: */}
+                    <Route path="/admin/users" element={<UserManagement />} />
+
+                    {/* // Inside routes: */}
+                    <Route path="/admin/enrollments" element={<EnrollmentManagement />} />
+                    <Route 
+                        path="/teacher/dashboard" 
+                        element={
+                            <ProtectedRoute allowedRoles={['Teacher']}>
+                                <TeacherDashboard />
+                            </ProtectedRoute>
+                        } 
+                    />
+                    <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+                    <Route 
+                        path="/student/dashboard" 
+                        element={
+                            <ProtectedRoute allowedRoles={['Student']}>
+                                <StudentDashboard />
+                            </ProtectedRoute>
+                        } 
+                    />
+                    {/* // Route setup: */}
+                    <Route path="/student/dashboard" element={<StudentDashboard />} />
+
+                    {/* Fallback Catch-all */}
+                    <Route path="*" element={<Navigate to="/login" replace />} />
+                </Routes>
+            </Router>
+        </AuthProvider>
+    );
 }
 
 export default App;
